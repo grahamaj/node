@@ -1248,7 +1248,7 @@
         ['OS=="solaris"', {
             'link_settings': {
               'libraries': [
-                '-lnsl',
+                '-lnsl -lrt',
             ]},
             'sources': [
               '../../src/base/platform/platform-solaris.cc',

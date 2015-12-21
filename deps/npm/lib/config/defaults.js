@@ -321,11 +321,7 @@ function getLocalAddresses () {
   // interfaces, and synchronously throw EPERM when run without
   // elevated privileges
   try {
-    if(process.platform === 'sunos' && os.release() != '5.11') {
-      interfaces = {} // Solaris < 11 doesn't support getifaddrs which is called by node's os.networkInterfaces()
-    } else {
-      interfaces = os.networkInterfaces()
-    }
+    interfaces = os.networkInterfaces()
   } catch (e) {
     interfaces = {}
   }
